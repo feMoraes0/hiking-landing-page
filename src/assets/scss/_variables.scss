@@ -2,6 +2,25 @@
 /**
  * COLOURS
  */
-
 $background-color: #0B1D26;
 $white-color: #FFFFFF;
+
+/**
+ * FONTS
+ */
+@font-face {
+  font-family: 'Gilroy Normal';
+  font-style: normal;
+  font-weight: normal;
+  src: url('~@/assets/fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gilroy Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('~@/assets/fonts/gilroy/Gilroy-Bold.ttf') format('truetype');
+}
+
+$gilroy-normal: 'Gilroy Normal', sans-serif;
+$gilroy-bold: 'Gilroy Bold', sans-serif;
