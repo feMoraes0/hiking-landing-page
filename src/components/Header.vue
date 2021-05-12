@@ -25,7 +25,9 @@ header {
   flex-direction: row;
   justify-content: space-between;
   padding: 5.33vh 4.167vw;
-  width: 100%;
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
 
   ul {
     align-items: center;
