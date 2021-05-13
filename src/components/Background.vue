@@ -20,9 +20,11 @@ export default {
 
 <style lang="scss" scoped>
 .background {
+  left: 0;
   position: absolute;
+  top: 0;
   width: 100vw;
-  z-index: -1;
+  z-index: 0;
 
   img {
     left: 0;
