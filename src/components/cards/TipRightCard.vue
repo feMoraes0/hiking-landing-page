@@ -1,0 +1,92 @@
+<template>
+  <div class="right-card">
+    <div class="content">
+      <p>Get Started</p>
+      <h1>What level of hiker are you?</h1>
+      <span>
+        Determining what level of hiker you are can be an important tool when planning future hikes.
+        This hiking level guide will help you plan hikes according to different hike ratings set by
+        various websites like All Trails and Modern Hiker. What type of hiker are you – novice,
+        moderate, advanced moderate, expert, or expert backpacker?
+      </span>
+      <button>read more</button>
+    </div>
+    <img src="@/assets/images/tips/level.png" alt="gear">
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'TipRightCard',
+};
+</script>
+
+<style lang="scss" scoped>
+div.right-card {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 2px solid blue;
+
+  div.content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 7.81vw;
+    width: 32.92vw;
+
+    p {
+      align-items: center;
+      color: #FBD784;
+      display: flex;
+      font-family: $gilroy-bold;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      margin-bottom: 27px;
+      text-transform: uppercase;
+
+      &::before {
+        content: "";
+        display: initial;
+        background-color: #FBD784;
+        width: 3.125vw;
+        height: 2px;
+        margin-right: 32px;
+      }
+    }
+
+    h1 {
+      color: $white-color;
+      font-size: 3rem;
+      line-height: 3.8125rem;
+      text-transform: capitalize;
+    }
+
+    span {
+      color: $white-color;
+      font-family: $gilroy-normal;
+      font-size: 1.125rem;
+      font-weight: bold;
+      line-height: 2rem;
+      margin-top: 27px;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      color: #FBD784;
+      font-family: $gilroy-normal;
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      margin-top: 27px;
+    }
+  }
+
+  img {
+    width: 29.47vw;
+    height: 66.6vh;
+  }
+}
+</style>

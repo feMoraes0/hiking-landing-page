@@ -1,34 +1,43 @@
 <template>
   <div id="app">
-    <Header/>
+    <section class="foreground">
+      <Header />
+      <Home />
+      <Tips />
+    </section>
+    <Background />
   </div>
 </template>
 
 <script>
+import Background from '@/components/Background.vue';
 import Header from '@/components/Header.vue';
+import Home from '@/components/Home.vue';
+import Tips from '@/components/Tips.vue';
 
 export default {
   name: 'App',
   components: {
+    Background,
     Header,
+    Home,
+    Tips,
   },
 };
 </script>
 
 <style lang="scss">
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+div#app {
+  background-color: $background-color;
+  width: 100vw;
+  height: 100%;
 }
 
-#app {
-  align-items: flex-start;
-  background-color: $background-color;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: 100vh;
+div#app section.foreground {
+  position: relative;
   width: 100vw;
+  z-index: 2;
+  background-color: transparent;
 }
 </style>
