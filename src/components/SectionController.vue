@@ -22,14 +22,14 @@ export default {
 
       if (scroll > this.tipsPosition[this.current] && this.current < 3) {
         this.current += 1;
-      } else if (this.current > 0 && scroll < this.tipsPosition[this.current - 1]) {
+      } else if (this.current > 0 && scroll <= this.tipsPosition[this.current - 1]) {
         this.current -= 1;
       }
     },
 
     onClick(tip) {
       window.scrollTo({
-        top: tip ? this.tipsPosition[tip] - 1 : 0,
+        top: tip ? this.tipsPosition[tip] : 0,
         left: 0,
         behavior: 'smooth',
       });
