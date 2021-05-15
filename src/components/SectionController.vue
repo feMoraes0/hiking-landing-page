@@ -29,7 +29,7 @@ export default {
 
     onClick(tip) {
       window.scrollTo({
-        top: tip ? this.tipsPosition[tip] : 0,
+        top: tip ? this.tipsPosition[tip] - 1 : 0,
         left: 0,
         behavior: 'smooth',
       });
