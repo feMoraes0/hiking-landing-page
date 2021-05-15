@@ -1,17 +1,6 @@
 <template>
   <div class="right-card">
-    <div class="content">
-      <p>Get Started</p>
-      <h1>What level of hiker are you?</h1>
-      <span>
-        Determining what level of hiker you are can be an important tool when planning future hikes.
-        This hiking level guide will help you plan hikes according to different hike ratings set by
-        various websites like All Trails and Modern Hiker. What type of hiker are you – novice,
-        moderate, advanced moderate, expert, or expert backpacker?
-      </span>
-      <button>read more</button>
-    </div>
-    <img src="@/assets/images/tips/level.png" alt="gear">
+    <slot></slot>
   </div>
 </template>
 
@@ -27,9 +16,9 @@ div.right-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 2px solid blue;
+  margin-bottom: 18.51vh;
 
-  div.content {
+  div.text-content {
     align-items: flex-start;
     display: flex;
     flex-direction: column;

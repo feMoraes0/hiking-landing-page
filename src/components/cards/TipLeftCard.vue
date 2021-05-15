@@ -1,18 +1,6 @@
 <template>
   <div class="left-card">
-    <img src="@/assets/images/tips/gear.png" alt="gear">
-    <div class="content">
-      <p>Get Started</p>
-      <h1>Picking the right Hiking Gear!</h1>
-      <span>
-        The nice thing about beginning hiking is that you don’t really
-        need any special gear, you can probably get away with things you already have.
-        Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and
-        regular clothes, which will get heavy and chafe wif they get sweaty or wet.
-      </span>
-      <button>read more</button>
-    </div>
-
+    <slot></slot>
   </div>
 </template>
 
@@ -28,7 +16,7 @@ div.left-card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 2px solid blue;
+  margin-bottom: 18.51vh;
 
   div.content {
     align-items: flex-start;
