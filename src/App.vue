@@ -2,12 +2,12 @@
   <div id="app">
     <section class="foreground">
       <Header />
-      <SectionController />
+      <SectionController/>
       <Home />
       <Tips />
       <Footer />
     </section>
-    <Background />
+    <Background :opacity="opacity"/>
   </div>
 </template>
 
@@ -28,6 +28,30 @@ export default {
     Home,
     SectionController,
     Tips,
+  },
+  data() {
+    return {
+      opacity: 1,
+    };
+  },
+  methods: {
+    handleScroll() {
+      const { scrollY } = window;
+      const homeLimit = 1040;
+
+      if (scrollY > 0 && scrollY < homeLimit) {
+        this.handleHomeOpacity(scrollY, homeLimit);
+      }
+    },
+    handleHomeOpacity(scroll, limit) {
+      this.opacity = 1 - (scroll / limit);
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>

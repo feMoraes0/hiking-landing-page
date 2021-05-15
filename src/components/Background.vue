@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background" :style="{'opacity': this.opacity }">
     <img class="sky" src="@/assets/images/background/HG.png" alt="background sky" />
     <img class="top-mountain" src="@/assets/images/background/MG.png" alt="mountain" />
     <img class="base-mountain" src="@/assets/images/background/VG.png" alt="base mountain" />
@@ -15,6 +15,12 @@
 <script>
 export default {
   name: 'Background',
+  props: {
+    opacity: {
+      type: Number,
+      default: 1,
+    },
+  },
 };
 </script>
 
