@@ -2,6 +2,7 @@
   <div id="app">
     <section class="foreground">
       <Header />
+      <SectionController />
       <Home />
       <Tips />
       <Footer />
@@ -15,6 +16,7 @@ import Background from '@/components/Background.vue';
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import Home from '@/components/Home.vue';
+import SectionController from '@/components/SectionController.vue';
 import Tips from '@/components/Tips.vue';
 
 export default {
@@ -24,6 +26,7 @@ export default {
     Footer,
     Header,
     Home,
+    SectionController,
     Tips,
   },
 };
