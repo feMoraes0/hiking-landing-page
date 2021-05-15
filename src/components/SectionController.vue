@@ -1,15 +1,41 @@
 <template>
   <ul>
-    <li class="active">Start</li>
-    <li>01</li>
-    <li>02</li>
-    <li>03</li>
+    <li :class="current === 0 ? 'active' : ''">Start</li>
+    <li :class="current === 1 ? 'active' : ''">01</li>
+    <li :class="current === 2 ? 'active' : ''">02</li>
+    <li :class="current === 3 ? 'active' : ''">03</li>
   </ul>
 </template>
 
 <script>
 export default {
   name: 'SectionController',
+  data() {
+    return {
+      current: 0,
+    };
+  },
+  methods: {
+    handleScroll() {
+      const { scrollY: scroll } = window;
+
+      if (scroll >= 0 && scroll < 300) {
+        this.current = 0;
+      } else if (scroll >= 300 && scroll < 1020) {
+        this.current = 1;
+      } else if (scroll >= 1020 && scroll < 1830) {
+        this.current = 2;
+      } else {
+        this.current = 3;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
 };
 </script>
 
