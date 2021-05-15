@@ -1,9 +1,9 @@
 <template>
   <ul>
-    <li :class="current === 0 ? 'active' : ''">Start</li>
-    <li :class="current === 1 ? 'active' : ''">01</li>
-    <li :class="current === 2 ? 'active' : ''">02</li>
-    <li :class="current === 3 ? 'active' : ''">03</li>
+    <li v-on:click="onClick(0)" :class="current === 0 ? 'active' : ''">Start</li>
+    <li v-on:click="onClick(1)" :class="current === 1 ? 'active' : ''">01</li>
+    <li v-on:click="onClick(2)" :class="current === 2 ? 'active' : ''">02</li>
+    <li v-on:click="onClick(3)" :class="current === 3 ? 'active' : ''">03</li>
   </ul>
 </template>
 
@@ -13,21 +13,26 @@ export default {
   data() {
     return {
       current: 0,
+      tipsPosition: [300, 1030, 1830, 2650],
     };
   },
   methods: {
     handleScroll() {
       const { scrollY: scroll } = window;
 
-      if (scroll >= 0 && scroll < 300) {
-        this.current = 0;
-      } else if (scroll >= 300 && scroll < 1020) {
-        this.current = 1;
-      } else if (scroll >= 1020 && scroll < 1830) {
-        this.current = 2;
-      } else {
-        this.current = 3;
+      if (scroll > this.tipsPosition[this.current] && this.current < 3) {
+        this.current += 1;
+      } else if (this.current > 0 && scroll < this.tipsPosition[this.current - 1]) {
+        this.current -= 1;
       }
+    },
+
+    onClick(tip) {
+      window.scrollTo({
+        top: tip ? this.tipsPosition[tip] : 0,
+        left: 0,
+        behavior: 'smooth',
+      });
     },
   },
   mounted() {
