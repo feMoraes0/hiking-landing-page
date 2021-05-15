@@ -15,11 +15,26 @@
 <script>
 export default {
   name: 'Background',
-  props: {
-    opacity: {
-      type: Number,
-      default: 1,
+  data() {
+    return {
+      opacity: 1,
+    };
+  },
+  methods: {
+    handleScroll() {
+      const { scrollY: scroll } = window;
+      const animationLimit = 1040;
+
+      if (scroll > 0 && scroll < animationLimit) {
+        this.opacity = 1 - (scroll / animationLimit);
+      }
     },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>

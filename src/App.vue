@@ -7,7 +7,7 @@
       <Tips />
       <Footer />
     </section>
-    <Background :opacity="opacity"/>
+    <Background />
   </div>
 </template>
 
@@ -29,35 +29,10 @@ export default {
     SectionController,
     Tips,
   },
-  data() {
-    return {
-      opacity: 1,
-    };
-  },
-  methods: {
-    handleScroll() {
-      const { scrollY } = window;
-      const homeLimit = 1040;
-
-      if (scrollY > 0 && scrollY < homeLimit) {
-        this.handleHomeOpacity(scrollY, homeLimit);
-      }
-    },
-    handleHomeOpacity(scroll, limit) {
-      this.opacity = 1 - (scroll / limit);
-    },
-  },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
-  },
 };
 </script>
 
 <style lang="scss">
-
 div#app {
   background-color: $background-color;
   width: 100vw;
