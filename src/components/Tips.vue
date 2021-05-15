@@ -11,7 +11,10 @@
           What type of hiker are you – novice, moderate, advanced moderate, expert, or
           expert backpacker?
         </span>
-        <button>read more</button>
+        <button>
+          read more
+          <img src="@/assets/icons/arrow-downward-gold.svg" />
+        </button>
       </div>
       <img src="@/assets/images/tips/level.png" alt="gear">
     </TipRightCard>
@@ -26,7 +29,10 @@
           A typical mistake hiking beginners make is wearing jeans and regular clothes, which will
           get heavy and chafe wif they get sweaty or wet.
         </span>
-        <button>read more</button>
+        <button>
+          read more
+          <img src="@/assets/icons/arrow-downward-gold.svg" />
+        </button>
       </div>
     </TipLeftCard>
     <TipRightCard>
@@ -39,7 +45,10 @@
           to expect. I like to know what my next landmark is as I hike. For example, I’ll
           read the guide and know that say, in a mile, I make a right turn at the junction..
         </span>
-        <button>read more</button>
+        <button>
+          read more
+          <img src="@/assets/icons/arrow-downward-gold.svg" />
+        </button>
       </div>
       <img src="@/assets/images/tips/map.png" alt="gear">
     </TipRightCard>

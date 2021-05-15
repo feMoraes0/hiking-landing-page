@@ -63,13 +63,23 @@ div.right-card {
     }
 
     button {
+      align-items: center;
       background-color: transparent;
       border: none;
       color: #FBD784;
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
       font-family: $gilroy-normal;
       font-size: 1.125rem;
       line-height: 1.375rem;
       margin-top: 27px;
+
+      img {
+        height: 16px;
+        margin-left: 16px;
+        width: 24px;
+      }
     }
   }
 

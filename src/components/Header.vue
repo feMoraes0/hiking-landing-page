@@ -7,6 +7,7 @@
       <li><a href="/">Blog</a></li>
     </ul>
     <button>
+      <img src="@/assets/icons/account-circle.svg" />
       <span>Account</span>
     </button>
   </header>
@@ -75,13 +76,20 @@ header {
   }
 
   button {
+    align-items: center;
     background-color: transparent;
     border: none;
     color: $white-color;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
     font-family: $gilroy-normal;
     font-size: 1.0625rem;
     line-height: 1.3125rem;
+
+    img {
+      margin-right: 8px;
+    }
   }
 }
 </style>

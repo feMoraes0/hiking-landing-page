@@ -3,7 +3,10 @@
     <div>
       <p>a hiking guide</p>
       <h1>be prepared for the mountains and beyond!</h1>
-      <button>scroll down</button>
+      <button>
+        scroll down
+        <img src="@/assets/icons/arrow-downward.svg" />
+      </button>
     </div>
   </section>
 </template>
@@ -55,14 +58,21 @@ section {
   }
 
   button {
+    align-items: center;
     background-color: transparent;
     border: none;
     color: $white-color;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
     font-family: $gilroy-bold;
     font-size: 1.125rem;
     line-height: 1.375rem;
     margin-top: 33px;
+
+    img {
+      margin-left: 16px;
+    }
   }
 }
 </style>
