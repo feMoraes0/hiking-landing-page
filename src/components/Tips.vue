@@ -61,7 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  padding: 33vh 11.927vw;
+  padding: 33vh 11.927vw 0 11.927vw;
   width: 100vw;
 }
 </style>
