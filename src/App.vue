@@ -4,6 +4,7 @@
       <Header />
       <Home />
       <Tips />
+      <Footer />
     </section>
     <Background />
   </div>
@@ -11,6 +12,7 @@
 
 <script>
 import Background from '@/components/Background.vue';
+import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import Home from '@/components/Home.vue';
 import Tips from '@/components/Tips.vue';
@@ -19,6 +21,7 @@ export default {
   name: 'App',
   components: {
     Background,
+    Footer,
     Header,
     Home,
     Tips,
