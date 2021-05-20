@@ -1,5 +1,5 @@
-const getElementPositionById = (identifier) => document.querySelector(`#${identifier}`).offsetTop;
+const getAbsoluteElementPositionById = (identifier) => document.querySelector(`#${identifier}`).offsetTop;
 
 export default {
-  getElementPositionById,
+  getAbsoluteElementPositionById,
 };
