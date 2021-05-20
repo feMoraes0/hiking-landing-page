@@ -8,38 +8,54 @@
 </template>
 
 <script>
+import helpers from '@/helpers/index';
+
 export default {
   name: 'SectionController',
   data() {
     return {
       current: 0,
-      tipsPosition: [300, 1030, 1830, 2650],
+      anchorsPosition: [300],
+      baseElement: 'section#tips',
     };
   },
   methods: {
     handleScroll() {
       const { scrollY: scroll } = window;
 
-      if (scroll > this.tipsPosition[this.current] && this.current < 3) {
+      if (scroll > this.anchorsPosition[this.current] && this.current < 3) {
         this.current += 1;
-      } else if (this.current > 0 && scroll <= this.tipsPosition[this.current - 1]) {
+      } else if (this.current > 0 && scroll <= this.anchorsPosition[this.current - 1]) {
         this.current -= 1;
       }
     },
 
     onClick(tip) {
       window.scrollTo({
-        top: tip ? this.tipsPosition[tip] : 0,
+        top: tip ? this.anchorsPosition[tip] : 0,
         left: 0,
         behavior: 'smooth',
+      });
+    },
+
+    updateBasedElementsPosition() {
+      const { childNodes } = document.querySelector(this.baseElement);
+      this.anchorsPosition = [300];
+
+      childNodes.forEach(({ id: nodeId }) => {
+        const absoluteNodePosition = helpers.getAbsoluteElementPositionById(nodeId);
+        this.anchorsPosition.push(absoluteNodePosition - 150);
       });
     },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.updateBasedElementsPosition);
+    this.updateBasedElementsPosition();
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.updateBasedElementsPosition);
   },
 };
 </script>

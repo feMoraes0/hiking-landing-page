@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <TipRightCard>
+  <section id="tips">
+    <TipRightCard id="started-card">
       <div class="text-content">
         <p>Get Started</p>
         <h1>What level of hiker are you?</h1>
@@ -18,7 +18,7 @@
       </div>
       <img src="@/assets/images/tips/level.png" alt="gear">
     </TipRightCard>
-    <TipLeftCard>
+    <TipLeftCard id="essentials-card">
       <img src="@/assets/images/tips/gear.png" alt="gear">
       <div class="content">
         <p>Hiking essentials</p>
@@ -35,7 +35,7 @@
         </button>
       </div>
     </TipLeftCard>
-    <TipRightCard>
+    <TipRightCard id="map-card">
       <div class="text-content">
         <p>where you go is the key</p>
         <h1>Undestand your map & timing</h1>
